@@ -52,3 +52,11 @@ NXS-102 — First Engineering Task
 ## License
 
 This project is intended for educational and portfolio purposes.
+
+## Local Development
+
+Create and activate a Python virtual environment:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
