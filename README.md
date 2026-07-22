@@ -60,3 +60,48 @@ Create and activate a Python virtual environment:
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
+```
+
+Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the application:
+
+```bash
+python3 app/main.py
+```
+
+Verify the application:
+
+```bash
+curl http://127.0.0.1:5000/
+curl http://127.0.0.1:5000/health
+```
+
+## Application Configuration
+
+The application reads the `APP_ENV` environment variable to determine which environment it is running in.
+
+If `APP_ENV` is not set, the application uses `development` by default.
+
+Run in development mode:
+
+```bash
+python3 app/main.py
+```
+
+Run in production mode:
+
+```bash
+APP_ENV=production python3 app/main.py
+```
+
+Check the active environment:
+
+```bash
+curl http://127.0.0.1:5000/health
+```
+

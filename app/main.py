@@ -1,7 +1,11 @@
+import os
+
 from flask import Flask, jsonify
 
 app = Flask(__name__)
 
+app_env = os.getenv("APP_ENV", "development")
+debug_mode = app_env == "development"
 
 @app.route("/")
 def home():
@@ -11,9 +15,10 @@ def home():
 @app.route("/health")
 def health():
     return jsonify({
-        "status": "healthy"
+        "status": "healthy",
+        "environment": app_env
     })
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=debug_mode)
