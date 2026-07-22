@@ -128,3 +128,44 @@ grep "Health endpoint accessed" logs/application.log
 ```
 
 The `logs/` directory is excluded from Git because log files are generated while the application runs.
+
+## Server Health Check
+
+The project includes a Bash script that checks the Linux server and Flask application.
+
+The script checks:
+
+* CPU load
+* Disk usage
+* Memory usage
+* Flask application process
+* Port `5000`
+* The `/health` endpoint
+
+Run the health check:
+
+```bash
+./scripts/health-check.sh
+```
+
+A healthy application returns:
+
+```text
+Overall result: PASS
+```
+
+and exit code `0`.
+
+An unhealthy application returns:
+
+```text
+Overall result: FAIL
+```
+
+and exit code `1`.
+
+Check the exit code immediately after running the script:
+
+```bash
+echo $?
+```
