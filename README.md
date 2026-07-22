@@ -105,3 +105,26 @@ Check the active environment:
 curl http://127.0.0.1:5000/health
 ```
 
+## Application Logging
+
+The application saves operational logs in:
+
+```text
+logs/application.log
+```
+
+The log file records application startup and endpoint activity.
+
+View the complete log file:
+
+```bash
+cat logs/application.log
+```
+
+Search for health-check activity:
+
+```bash
+grep "Health endpoint accessed" logs/application.log
+```
+
+The `logs/` directory is excluded from Git because log files are generated while the application runs.
