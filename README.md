@@ -115,7 +115,7 @@ Run with a custom version:
 APP_VERSION=1.0.0 python3 app/main.py
 ```
 
-The active version is returned by the `/health` endpoint.
+The health endpoint reports application status, environment, and version.
 
 
 ## Application Logging
