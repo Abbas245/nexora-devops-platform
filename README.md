@@ -115,8 +115,7 @@ Run with a custom version:
 APP_VERSION=1.0.0 python3 app/main.py
 ```
 
-Operations can use the health endpoint to confirm the deployed application version.
-
+Operations can use the health endpoint to confirm application status, environment, and deployed version.
 
 ## Application Logging
 
