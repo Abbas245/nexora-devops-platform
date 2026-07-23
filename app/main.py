@@ -6,6 +6,7 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 
 app_env = os.getenv("APP_ENV", "development")
+app_version = os.getenv("APP_VERSION", "0.1.0")
 debug_mode = app_env == "development"
 
 logging.basicConfig(
@@ -26,7 +27,8 @@ def health():
     logging.info("Health endpoint accessed")
     return jsonify({
         "status": "healthy",
-        "environment": app_env
+        "environment": app_env,
+        "version": app_version
     })
 
 

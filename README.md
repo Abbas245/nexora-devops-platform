@@ -105,6 +105,19 @@ Check the active environment:
 curl http://127.0.0.1:5000/health
 ```
 
+The application also reads the `APP_VERSION` environment variable.
+
+If `APP_VERSION` is not set, the application uses `0.1.0` by default.
+
+Run with a custom version:
+
+```bash
+APP_VERSION=1.0.0 python3 app/main.py
+```
+
+The active version is returned by the `/health` endpoint.
+
+
 ## Application Logging
 
 The application saves operational logs in:
