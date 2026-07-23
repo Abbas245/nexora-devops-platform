@@ -169,3 +169,35 @@ Check the exit code immediately after running the script:
 ```bash
 echo $?
 ```
+
+## Local Deployment Automation
+
+The project includes a Bash script that prepares and starts the application locally.
+
+The deployment script:
+
+* Checks that Python 3 is installed
+* Checks that the virtual environment exists
+* Checks that `requirements.txt` exists
+* Installs the required Python dependencies
+* Prevents duplicate application processes
+* Starts the Flask application in the background
+* Verifies the `/health` endpoint
+
+Run the deployment:
+
+```bash
+./scripts/deploy-local.sh
+```
+
+Verify the application:
+
+```bash
+curl http://127.0.0.1:5000/health
+```
+
+Stop the locally deployed application:
+
+```bash
+pkill -f "python3 app/main.py"
+```
